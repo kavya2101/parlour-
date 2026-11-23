@@ -3,8 +3,12 @@
 function toggleMenu() {
 
     const nav = document.getElementById("navMenu");
+    const menuBtn = document.querySelector(".menu-btn");
 
-    nav.classList.toggle("active");
+    const isOpen = nav.classList.toggle("active");
+    if (menuBtn) {
+        menuBtn.setAttribute("aria-expanded", isOpen);
+    }
 
 }
 
@@ -15,8 +19,13 @@ document.querySelectorAll("#navMenu a").forEach(link => {
 
     link.addEventListener("click", () => {
 
-        document.getElementById("navMenu")
-            .classList.remove("active");
+        const nav = document.getElementById("navMenu");
+        const menuBtn = document.querySelector(".menu-btn");
+
+        nav.classList.remove("active");
+        if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "false");
+        }
 
     });
 

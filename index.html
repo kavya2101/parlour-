@@ -39,7 +39,7 @@
 
     <a href="#appointment" class="nav-btn">Book Now</a>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
 
 </header>
 
@@ -75,7 +75,7 @@
         <div class="hero-stats">
 
             <div>
-                <strong>5+</strong>
+                <strong>8+</strong>
                 <span>Years Experience</span>
             </div>
 
@@ -110,6 +110,221 @@
 
     </div>
 
+</section>
+
+
+<!-- ================= APPOINTMENT ================= -->
+
+<section id="appointment" class="appointment-section">
+
+    <div class="section-heading">
+
+        <p>BOOK YOUR VISIT</p>
+
+        <h2>Make an Appointment</h2>
+
+        <span>
+            Fill in your details and we'll get back to you.
+        </span>
+
+    </div>
+
+
+    <form id="appointmentForm" class="appointment-form">
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="Enter phone number"
+                    required
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="service">Select Service</label>
+
+            <select id="service" name="service" required>
+
+                <option value="">Choose a service</option>
+
+                <option>Threading with Upper Lips - ₹40</option>
+                <option>Hand Wax - ₹200</option>
+                <option>Half Leg Wax - ₹250 / Full Leg - ₹300</option>
+                <option>Underarm Wax - ₹100</option>
+                <option>Haircut - ₹70</option>
+                <option>U Shape - ₹100</option>
+                <option>V Shape - ₹150</option>
+                <option>Step Cut - ₹200</option>
+                <option>Bangs - ₹30</option>
+                <option>Cleanup - Starting ₹250</option>
+                <option>Fruit Facial - Starting ₹500</option>
+                <option>Bleach - ₹150</option>
+                <option>D-Tan - ₹100</option>
+                <option>Blouse Stitching</option>
+                <option>Dress Stitching</option>
+                <option>Alterations</option>
+                <option>Custom Tailoring</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label for="date">Preferred Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="time">Preferred Time</label>
+
+                <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    required
+                >
+
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="message">Message</label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell us anything you'd like us to know..."
+            ></textarea>
+
+        </div>
+
+
+        <button type="submit" class="primary-btn submit-btn">
+            Request Appointment
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-info">
+
+        <p class="tagline">GET IN TOUCH</p>
+
+        <h2>Let's Make You Feel Beautiful</h2>
+
+        <p>
+            Have a question or want to book a service?
+            Contact Rajeshvari Beauty Parlour.
+        </p>
+
+
+        <a href="tel:+917067206047" class="contact-item">
+
+            <span>📞</span>
+
+            <div>
+                <small>CALL US</small>
+                <strong>+91 7067206047</strong>
+            </div>
+
+        </a>
+
+
+        <a href="https://maps.google.com/?q=21.294320,81.643328" target="_blank" rel="noopener noreferrer" class="contact-item">
+
+            <span>📍</span>
+
+            <div>
+                <small>VISIT US</small>
+                <strong>Raipur, Chhattisgarh, India</strong>
+            </div>
+
+        </a>
+
+
+        <div class="contact-item">
+
+            <span>🕐</span>
+
+            <div>
+                <small>OPENING HOURS</small>
+                <strong>10:00 AM – 9:00 PM</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-card">
+
+        <div class="map-container">
+            <iframe
+                src="https://maps.google.com/maps?q=21.294320,81.643328&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Rajeshvari Beauty Parlour Location"
+            ></iframe>
+            <div class="map-footer">
+                <div class="map-location-text">
+                    <strong>Rajeshvari Beauty Parlour</strong>
+                    <span>Raipur, Chhattisgarh</span>
+                </div>
+                <a
+                    href="https://maps.google.com/?q=21.294320,81.643328"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-action-btn"
+                >
+                    Get Directions ↗
+                </a>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 
@@ -344,32 +559,16 @@
 
     <div class="gallery-grid">
 
-        <div class="gallery-item item-one">
-            <div>
-                <span>💄</span>
-                <h3>Makeup</h3>
-            </div>
+        <div class="gallery-item">
+            <img src="images/work-1.jpg" alt="Our Work Sample 1" loading="lazy">
         </div>
 
-        <div class="gallery-item item-two">
-            <div>
-                <span>💇‍♀️</span>
-                <h3>Hair Styling</h3>
-            </div>
+        <div class="gallery-item">
+            <img src="images/work-2.jpg" alt="Our Work Sample 2" loading="lazy">
         </div>
 
-        <div class="gallery-item item-three">
-            <div>
-                <span>👗</span>
-                <h3>Fashion</h3>
-            </div>
-        </div>
-
-        <div class="gallery-item item-four">
-            <div>
-                <span>🧵</span>
-                <h3>Tailoring</h3>
-            </div>
+        <div class="gallery-item">
+            <img src="images/work-3.png" alt="Our Work Sample 3" loading="lazy">
         </div>
 
     </div>
@@ -427,214 +626,6 @@
 
     </div>
 
-</section>
-
-
-<!-- ================= APPOINTMENT ================= -->
-
-<section id="appointment" class="appointment-section">
-
-    <div class="section-heading">
-
-        <p>BOOK YOUR VISIT</p>
-
-        <h2>Make an Appointment</h2>
-
-        <span>
-            Fill in your details and we'll get back to you.
-        </span>
-
-    </div>
-
-
-    <form id="appointmentForm" class="appointment-form">
-
-        <div class="form-row">
-
-            <div class="form-group">
-                <label>Your Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter phone number"
-                    required
-                >
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Select Service</label>
-
-            <select id="service" required>
-
-                <option value="">Choose a service</option>
-
-                <option>Threading with Upper Lips - ₹40</option>
-                <option>Hand Wax - ₹200</option>
-                <option>Half Leg Wax - ₹250 / Full Leg - ₹300</option>
-                <option>Underarm Wax - ₹100</option>
-                <option>Haircut - ₹70</option>
-                <option>U Shape - ₹100</option>
-                <option>V Shape - ₹150</option>
-                <option>Step Cut - ₹200</option>
-                <option>Bangs - ₹30</option>
-                <option>Cleanup - Starting ₹250</option>
-                <option>Fruit Facial - Starting ₹500</option>
-                <option>Bleach - ₹150</option>
-                <option>D-Tan - ₹100</option>
-                <option>Blouse Stitching</option>
-                <option>Dress Stitching</option>
-                <option>Alterations</option>
-                <option>Custom Tailoring</option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-row">
-
-            <div class="form-group">
-
-                <label>Preferred Date</label>
-
-                <input
-                    type="date"
-                    id="date"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>Preferred Time</label>
-
-                <input
-                    type="time"
-                    id="time"
-                    required
-                >
-
-            </div>
-
-        </div>
-        <div class="form-group">
-
-            <label>Message</label>
-
-            <textarea
-                id="message"
-                rows="4"
-                placeholder="Tell us anything you'd like us to know..."
-            ></textarea>
-
-        </div>
-
-
-        <button type="submit" class="primary-btn submit-btn">
-            Request Appointment
-        </button>
-
-    </form>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact-section">
-
-    <div class="contact-info">
-
-        <p class="tagline">GET IN TOUCH</p>
-
-        <h2>Let's Make You Feel Beautiful</h2>
-
-        <p>
-            Have a question or want to book a service?
-            Contact Rajeshvari Beauty Parlour.
-        </p>
-
-
-        <a href="tel:+917067206047" class="contact-item">
-
-            <span>📞</span>
-
-            <div>
-                <small>CALL US</small>
-                <strong>+91 7067206047</strong>
-            </div>
-
-        </a>
-
-
-        <a href="https://maps.google.com/?q=21.294320,81.643328" target="_blank" rel="noopener noreferrer" class="contact-item">
-
-            <span>📍</span>
-
-            <div>
-                <small>VISIT US</small>
-                <strong>Raipur, Chhattisgarh, India</strong>
-            </div>
-
-        </a>
-
-
-        <div class="contact-item">
-
-            <span>🕐</span>
-
-            <div>
-                <small>OPENING HOURS</small>
-                <strong>10:00 AM – 9:00 PM</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="contact-card">
-
-        <div class="map-container">
-            <iframe
-                src="https://maps.google.com/maps?q=21.294320,81.643328&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Rajeshvari Beauty Parlour Location"
-            ></iframe>
-            <div class="map-footer">
-                <div class="map-location-text">
-                    <strong>Rajeshvari Beauty Parlour</strong>
-                    <span>Raipur, Chhattisgarh</span>
-                </div>
-                <a
-                    href="https://maps.google.com/?q=21.294320,81.643328"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="map-action-btn"
-                >
-                    Get Directions ↗
-                </a>
-            </div>
-        </div>
-
-    </div>
 </section>
 
 
