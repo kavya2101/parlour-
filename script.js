@@ -46,16 +46,33 @@ appointmentForm.addEventListener("submit", function(event) {
     const date =
         document.getElementById("date").value;
 
+    const time =
+        document.getElementById("time").value;
+
     const message =
         document.getElementById("message").value;
 
 
-    if (!name || !phone || !service || !date) {
+    if (!name || !phone || !service || !date || !time) {
 
         alert("Please fill all required fields.");
 
         return;
 
+    }
+
+
+    // Format time to 12-hour AM/PM format
+    let formattedTime = time;
+    if (time) {
+        const parts = time.split(":");
+        const hour = parseInt(parts[0], 10);
+        const minute = parts[1];
+        if (!isNaN(hour) && minute !== undefined) {
+            const ampm = hour >= 12 ? "PM" : "AM";
+            const hour12 = hour % 12 || 12;
+            formattedTime = `${hour12}:${minute} ${ampm}`;
+        }
     }
 
 
@@ -73,6 +90,7 @@ appointmentForm.addEventListener("submit", function(event) {
         `Phone: ${phone}\n` +
         `Service: ${service}\n` +
         `Preferred Date: ${date}\n` +
+        `Preferred Time: ${formattedTime}\n` +
         `Message: ${message || "No message"}\n\n` +
         `Please confirm this appointment.`;
 

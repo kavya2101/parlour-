@@ -8,6 +8,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,8 @@ body {
     background: var(--cream);
     color: var(--dark);
     line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -493,6 +496,8 @@ a {
     color: var(--pink);
     font-size: 13px;
     font-weight: 600;
+    display: block;
+    line-height: 1.5;
 }
 
 /* ================= TAILORING ================= */
@@ -1018,13 +1023,16 @@ a {
 
 .contact-section {
     padding: 80px 7%;
-    display: flex;
-    gap: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
 }
 
 .contact-info {
-    max-width: 500px;
+    max-width: 100%;
 }
 
 .contact-info h2 {
@@ -1045,19 +1053,29 @@ a {
     display: flex;
     align-items: center;
     gap: 18px;
-    margin: 22px 0;
-    padding: 12px 18px;
+    margin: 16px 0;
+    padding: 14px 20px;
     background: var(--light-pink);
-    border-radius: 15px;
+    border-radius: 18px;
     transition: var(--transition);
+    border: 1px solid transparent;
 }
 
 .contact-item:hover {
     background: var(--pink);
+    border-color: var(--pink);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(184, 92, 117, 0.2);
+}
+
+.contact-item:hover small,
+.contact-item:hover strong {
+    color: white;
 }
 
 .contact-item:hover span {
     background: white;
+    color: var(--pink);
 }
 
 .contact-item > span {
@@ -1070,6 +1088,7 @@ a {
     color: white;
     font-size: 20px;
     flex-shrink: 0;
+    transition: var(--transition);
 }
 
 .contact-item div {
@@ -1082,74 +1101,90 @@ a {
     font-size: 8px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: var(--transition);
 }
 
 .contact-item strong {
     font-size: 14px;
     color: var(--dark);
+    transition: var(--transition);
 }
 
 .contact-card {
     width: 100%;
-    max-width: 450px;
+    height: 100%;
 }
 
-.map-placeholder {
-    height: 350px;
-    border-radius: 30px;
-    background:
-        linear-gradient(45deg, #edd1d5 25%, transparent 25%),
-        linear-gradient(-45deg, #edd1d5 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #edd1d5 75%),
-        linear-gradient(-45deg, transparent 75%, #edd1d5 75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 30px, 30px -30px, -30px 0;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    position: relative;
+.map-container {
+    height: 100%;
+    min-height: 440px;
+    border-radius: 28px;
     overflow: hidden;
-}
-
-.map-placeholder::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-    opacity: 0.5;
-}
-
-.map-placeholder div {
+    box-shadow: 
+        0 20px 50px rgba(184, 92, 117, 0.15),
+        0 0 80px rgba(184, 92, 117, 0.05);
+    border: 2px solid #f0d8e0;
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(60, 30, 40, 0.1);
-    max-width: 280px;
-    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.map-placeholder span {
-    font-size: 38px;
-    color: var(--pink);
+.map-container iframe {
+    width: 100%;
+    flex: 1;
+    min-height: 350px;
+    border: none;
     display: block;
-    margin-bottom: 15px;
 }
 
-.map-placeholder h3 {
-    font-family: "DM Serif Display", serif;
-    font-size: 24px;
+.map-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    background: white;
+    border-top: 1px solid #f2dfe2;
+    gap: 14px;
+}
+
+.map-location-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-location-text strong {
+    font-size: 14px;
     color: var(--dark);
-    margin-bottom: 10px;
+    font-family: "DM Serif Display", serif;
+    letter-spacing: 0.5px;
 }
 
-.map-placeholder p {
-    color: #6a5a5f;
+.map-location-text span {
+    font-size: 11px;
+    color: #7a6a70;
+}
+
+.map-action-btn {
+    background: var(--pink);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
     font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(184, 92, 117, 0.3);
+    white-space: nowrap;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.map-action-btn:hover {
+    background: var(--dark-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(142, 63, 86, 0.4);
 }
 
 /* ================= FOOTER ================= */
@@ -1362,8 +1397,9 @@ footer {
 
     /* -- Contact -- */
     .contact-section {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
     }
 
     .contact-info {
@@ -1375,13 +1411,21 @@ footer {
         font-size: 36px;
     }
 
-    .contact-card {
-        width: 100%;
-        max-width: 100%;
+    .contact-item {
+        max-width: 480px;
+        margin: 14px auto;
+        text-align: left;
     }
 
-    .map-placeholder {
-        height: 280px;
+    .contact-card {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .map-container {
+        height: auto;
+        min-height: 380px;
     }
 
     /* -- Gallery -- */
@@ -1411,6 +1455,10 @@ footer {
     .navbar {
         padding: 0 4%;
         height: 70px;
+    }
+
+    .navbar nav.active {
+        top: 70px;
     }
 
     .logo h2 {
@@ -1532,6 +1580,11 @@ footer {
         font-size: 13px;
     }
 
+    .service-card strong {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
     /* -- Tailoring -- */
     .tailoring-section {
         padding: 50px 4%;
@@ -1645,8 +1698,20 @@ footer {
     .form-group select,
     .form-group textarea {
         padding: 12px 14px;
-        font-size: 13px;
+        font-size: 16px; /* Prevents iOS Safari from auto-zooming */
         border-radius: 12px;
+    }
+
+    .form-group select {
+        width: 100%;
+        max-width: 100%;
+        text-overflow: ellipsis;
+    }
+
+    .form-group input[type="date"],
+    .form-group input[type="time"] {
+        min-height: 46px;
+        -webkit-appearance: none;
     }
 
     .submit-btn {
@@ -1660,8 +1725,12 @@ footer {
     }
 
     .contact-item {
-        padding: 10px 14px;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 16px;
         gap: 14px;
+        margin: 10px 0;
+        text-align: left;
     }
 
     .contact-item > span {
@@ -1674,17 +1743,31 @@ footer {
         font-size: 13px;
     }
 
-    .map-placeholder {
-        height: 240px;
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-container {
+        min-height: 320px;
         border-radius: 20px;
     }
 
-    .map-placeholder div {
-        padding: 25px 20px;
+    .map-container iframe {
+        min-height: 240px;
     }
 
-    .map-placeholder h3 {
-        font-size: 18px;
+    .map-footer {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .map-action-btn {
+        justify-content: center;
+        width: 100%;
     }
 
     /* -- Footer -- */
