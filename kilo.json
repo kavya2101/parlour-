@@ -1,0 +1,11 @@
+{
+  "skills": {
+    "paths": [
+      "./skills/skills/autofix",
+      "./skills/skills/code-review",
+      "./skills/skills/coderabbit-config",
+      "./skills/skills/coderabbit-secure",
+      "./skills/skills/coderabbit-setup"
+    ]
+  }
+}

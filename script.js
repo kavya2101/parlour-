@@ -1,0 +1,150 @@
+ // ================= MOBILE MENU =================
+
+function toggleMenu() {
+
+    const nav = document.getElementById("navMenu");
+
+    nav.classList.toggle("active");
+
+}
+
+
+// Close mobile menu after clicking a link
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document.getElementById("navMenu")
+            .classList.remove("active");
+
+    });
+
+});
+
+
+// ================= APPOINTMENT FORM =================
+
+// ================= APPOINTMENT FORM =================
+
+const appointmentForm =
+    document.getElementById("appointmentForm");
+
+appointmentForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("name").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const service =
+        document.getElementById("service").value;
+
+    const date =
+        document.getElementById("date").value;
+
+    const message =
+        document.getElementById("message").value;
+
+
+    if (!name || !phone || !service || !date) {
+
+        alert("Please fill all required fields.");
+
+        return;
+
+    }
+
+
+    // ================= WHATSAPP =================
+
+    // Replace this with Rajeshvari Beauty Parlour's
+    // WhatsApp number.
+
+    const ownerWhatsApp = "917067206047";
+
+
+    const whatsappMessage =
+        `🌸 NEW APPOINTMENT REQUEST\n\n` +
+        `Customer: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Service: ${service}\n` +
+        `Preferred Date: ${date}\n` +
+        `Message: ${message || "No message"}\n\n` +
+        `Please confirm this appointment.`;
+
+
+    const whatsappURL =
+        `https://wa.me/${ownerWhatsApp}?text=${encodeURIComponent(whatsappMessage)}`;
+
+
+    // Open WhatsApp
+
+    window.open(whatsappURL, "_blank");
+
+
+    // Clear form
+
+    appointmentForm.reset();
+
+});
+
+// ================= SET MINIMUM DATE =================
+
+const dateInput =
+    document.getElementById("date");
+
+
+// Prevent selecting previous dates
+
+const today =
+    new Date().toISOString().split("T")[0];
+
+dateInput.setAttribute("min", today);
+
+
+// ================= SCROLL ANIMATION =================
+
+const sections =
+    document.querySelectorAll(
+        ".service-card, .tailor-box, .price-card, .gallery-item"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+
+sections.forEach(section => {
+
+    section.style.opacity = "0";
+    section.style.transform = "translateY(25px)";
+    section.style.transition = "0.6s ease";
+
+    observer.observe(section);
+
+});
