@@ -1252,6 +1252,7 @@ footer {
         text-align: center;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         gap: 20px;
+        z-index: 999;
     }
 
     .navbar nav.active a {
@@ -1264,9 +1265,13 @@ footer {
         color: var(--pink);
     }
 
+    /* -- Hero -- */
     .hero {
+        flex-direction: column;
         padding: 60px 5%;
         gap: 40px;
+        text-align: center;
+        min-height: auto;
     }
 
     .hero-content {
@@ -1275,102 +1280,219 @@ footer {
         order: 1;
     }
 
-    .hero-card {
-        width: 100%;
-        max-width: 350px;
-        margin-top: 40px;
-        justify-self: center;
-        flex: 0 0 100%;
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .hero-buttons,
+    .hero-text {
+        margin: 20px auto;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 320px;
+        height: 380px;
+        margin: 0 auto;
+        flex: 0 0 auto;
+        order: 0;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
     .hero-stats {
         justify-content: center;
     }
 
+    /* -- Services & Pricing -- */
     .service-grid,
     .pricing-grid {
         grid-template-columns: 1fr 1fr;
     }
 
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    /* -- Tailoring -- */
     .tailoring-section {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 60px 5%;
     }
 
     .tailoring-content,
     .tailoring-grid {
         width: 100%;
+        flex: 0 0 100%;
     }
 
     .tailoring-content h2 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
+    .tailoring-content .tagline {
+        color: #f0c0d0;
+    }
+
+    /* -- About -- */
     .about-box {
         flex-direction: column;
         text-align: center;
+        padding: 40px 30px;
     }
 
     .about-icon {
         margin: 0 auto 30px;
+        min-width: 140px;
+        height: 140px;
+        font-size: 55px;
+    }
+
+    .about-box h2 {
+        font-size: 34px;
+    }
+
+    .about-points {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    /* -- Contact -- */
+    .contact-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-info {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .contact-info h2 {
+        font-size: 36px;
     }
 
     .contact-card {
         width: 100%;
-    }
-
-    .contact-section {
-        flex-direction: column;
+        max-width: 100%;
     }
 
     .map-placeholder {
-        height: 300px;
+        height: 280px;
+    }
+
+    /* -- Gallery -- */
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px 180px;
+    }
+
+    .item-four {
+        grid-column: span 2;
+    }
+
+    /* -- Footer -- */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .socials {
+        justify-content: center;
     }
 }
 
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 0 5%;
+        padding: 0 4%;
+        height: 70px;
     }
 
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    .logo > span {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    /* -- Hero -- */
     .hero {
-        padding: 50px 4%;
+        padding: 40px 4%;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+        line-height: 1.7;
     }
 
     .hero-card {
-        width: 260px;
-        height: 320px;
+        max-width: 260px;
+        height: 310px;
     }
 
     .beauty-circle {
-        width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
     }
 
     .scissors {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     .floating-card {
-        font-size: 9px;
-        padding: 8px 12px;
+        font-size: 10px;
+        padding: 10px 14px;
     }
 
     .card-one {
-        top: 45px;
-        left: -15px;
+        top: 40px;
+        left: -10px;
     }
 
     .card-two {
-        bottom: 45px;
-        right: -15px;
+        bottom: 40px;
+        right: -10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .hero-buttons .primary-btn,
+    .hero-buttons .secondary-btn {
+        text-align: center;
+        width: 100%;
     }
 
     .hero-stats {
-        gap: 12px;
+        gap: 20px;
     }
 
+    .hero-stats strong {
+        font-size: 20px;
+    }
+
+    .hero-stats span {
+        font-size: 9px;
+    }
+
+    /* -- Sections -- */
     .section,
     .gallery-section,
     .about-section,
@@ -1380,50 +1502,212 @@ footer {
     }
 
     .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .section-heading p {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    /* -- Services -- */
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 25px 20px;
+    }
+
+    .service-icon {
         font-size: 32px;
     }
 
-    .service-grid,
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+    /* -- Tailoring -- */
+    .tailoring-section {
+        padding: 50px 4%;
+        gap: 30px;
+    }
+
+    .tailoring-content h2 {
+        font-size: 32px;
+    }
+
+    .tailoring-content > p:not(.tagline) {
+        font-size: 13px;
+    }
+
+    .tailoring-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .tailor-box {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .tailor-box span {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .tailor-box h3 {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    .tailor-box p {
+        font-size: 10px;
+    }
+
+    /* -- Pricing -- */
     .pricing-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .price-card {
+        padding: 30px 24px;
     }
 
     .price-card.popular {
         transform: none;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 200px);
+    .price {
+        font-size: 30px;
     }
 
+    /* -- Gallery -- */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 180px);
+        gap: 16px;
+    }
+
+    .item-four {
+        grid-column: span 1;
+    }
+
+    .gallery-item h3 {
+        font-size: 20px;
+    }
+
+    .gallery-item span {
+        font-size: 34px;
+    }
+
+    /* -- About -- */
     .about-box {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        border-radius: 24px;
+        gap: 25px;
+    }
+
+    .about-icon {
+        min-width: 110px;
+        height: 110px;
+        font-size: 45px;
     }
 
     .about-box h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
+    .about-points {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: left;
+    }
+
+    /* -- Appointment -- */
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
     .appointment-form {
-        padding: 25px;
+        padding: 25px 18px;
+        border-radius: 20px;
     }
 
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 13px;
+        border-radius: 12px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    /* -- Contact -- */
     .contact-info h2 {
-        font-size: 34px;
+        font-size: 28px;
     }
 
+    .contact-item {
+        padding: 10px 14px;
+        gap: 14px;
+    }
+
+    .contact-item > span {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .contact-item strong {
+        font-size: 13px;
+    }
+
+    .map-placeholder {
+        height: 240px;
+        border-radius: 20px;
+    }
+
+    .map-placeholder div {
+        padding: 25px 20px;
+    }
+
+    .map-placeholder h3 {
+        font-size: 18px;
+    }
+
+    /* -- Footer -- */
     footer {
+        padding: 30px 4%;
         text-align: center;
         justify-content: center;
     }
 
     .socials {
         justify-content: center;
+    }
+
+    .footer-logo h2 {
+        font-size: 22px;
+    }
+
+    /* -- Toast -- */
+    .toast {
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        text-align: center;
+        font-size: 11px;
     }
 }
